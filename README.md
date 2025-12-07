@@ -1,312 +1,267 @@
 # Expired Goods Auto-Detection & Discount System
 
 ## Project Overview
-A comprehensive PL/SQL-based Oracle database solution for automated monitoring of product expiration dates with tiered alerting, automatic discount application, and business intelligence capabilities. This system is designed for retail stores, supermarkets, and warehouses to efficiently manage product shelf life, reduce waste, and optimize revenue recovery from near-expired items.
+A comprehensive Oracle PL/SQL-based database system designed to automate the monitoring of product expiration dates in retail environments. The system provides real-time tiered alerts, automatic progressive discounting, staff workflow management, and business intelligence dashboards to minimize waste and maximize revenue recovery from near-expired products.
 
 ## Student Information
-- **Name:** Akariza Gasana Leslie
-- **Student ID:** 27413
-- **Group:** Thursday
-- **Course:** Database Development with PL/SQL (INSY 8311)
-- **Institution:** Adventist University of Central Africa (AUCA)
-- **Lecturer:** Eric Maniraguha
-- **Project Completion Date:** December 2025
+- **Name**: Akariza Gasana Leslie
+- **Student ID**: 27413
+- **Group**: Thursday
+- **Course**: Database Development with PL/SQL (INSY 8311)
+- **Institution**: Adventist University of Central Africa (AUCA)
+- **Lecturer**: Eric Maniraguha
+- **Completion Date**: December 2025
 
 ## Problem Statement
-Retail businesses face significant financial losses due to expired goods, manual monitoring inefficiencies, and suboptimal discount strategies. Current inventory management systems lack automated real-time expiry tracking, intelligent alerting mechanisms, and data-driven decision support for discount optimization.
-
-This system solves these challenges by providing automated expiry monitoring, tiered alert generation, dynamic discount application, and comprehensive business intelligence for inventory management decision-making.
+Retail businesses experience significant financial losses due to expired goods, manual monitoring inefficiencies, and inconsistent discount strategies. This system addresses these challenges by implementing automated real-time expiry tracking, intelligent alerting mechanisms, and data-driven discount optimization.
 
 ## Key Objectives
-- Reduce expired goods waste by 40% through proactive monitoring
-- Increase revenue recovery from near-expired items by 25% via optimized discounts
-- Automate tiered alert generation (Moderate/Critical) based on expiry proximity
-- Eliminate 80% of manual expiry checking through system automation
-- Provide real-time BI insights for inventory optimization and strategic decisions
-- Implement comprehensive audit trails for compliance and performance tracking
+1. Reduce expired goods waste by 40% through proactive monitoring
+2. Increase revenue recovery from near-expiry products by 25%
+3. Automate 100% of tiered alert generation (CRITICAL/MODERATE)
+4. Eliminate 80% of manual expiry checking through system automation
+5. Ensure 100% audit trail coverage for compliance requirements
+6. Provide real-time business intelligence dashboards for decision-making
 
 ## Quick Start Instructions
 
 ### Prerequisites
-- Oracle Database 19c or 21c installed
+- Oracle Database 19c or 21c
 - SQL Developer or SQL*Plus
-- System privileges for PDB creation
-- Minimum 500MB disk space
+- SYSDBA privileges for PDB creation
+- 500MB minimum disk space
 
 ### Installation Steps
-
-#### 1. Database Setup
+1. **Create PDB Database:**
 ```sql
--- Create PDB (run as SYS)
 CREATE PLUGGABLE DATABASE THUR_27413_Leslie_ExpiredGoodsDB
-ADMIN USER admin IDENTIFIED BY password
-FILE_NAME_CONVERT = ('/opt/oracle/oradata/XE/pdbseed/', 
-                     '/opt/oracle/oradata/XE/THUR_27413_LESLIE_EXPIREDGOODSDB/');
-
--- Switch to PDB
+ADMIN USER admin IDENTIFIED BY password;
 ALTER SESSION SET CONTAINER = THUR_27413_Leslie_ExpiredGoodsDB;
 ```
-
-#### 2. User & Tablespace Configuration
+2.  **Create User & Grant Privileges:**
 ```sql
-CREATE USER expiry_admin IDENTIFIED BY Leslie;
--- Grant privileges (see creationphase5.sql for complete list)
-GRANT CREATE SESSION, CREATE TABLE, CREATE PROCEDURE TO expiry_admin;
-
--- Create tablespaces
-CREATE TABLESPACE expiry_data DATAFILE 'expiry_data01.dbf' SIZE 100M;
-CREATE TABLESPACE expiry_idx DATAFILE 'expiry_idx01.dbf' SIZE 50M;
+CREATE USER expiry\_admin IDENTIFIED BY Leslie;
+GRANT CREATE SESSION, CREATE TABLE, CREATE PROCEDURE, CREATE TRIGGER TO expiry\_admin;
+GRANT UNLIMITED TABLESPACE TO expiry\_admin;
 ```
 
-#### 3. Schema Implementation
+3.  **Execute Scripts in Order:**
+    
+    *   [database/scripts/createqueuries.sql](https://database/scripts/createqueuries.sql) \- Database setup
+        
+    *   [database/scripts/insertqueuery.sql](https://database/scripts/insertqueuery.sql) \- Tables and test data
+        
+    *   [database/scripts/Plsqlcomponents.sql](https://database/scripts/Plsqlcomponents.sql) \- PL/SQL components
+        
+    *   [database/scripts/triggers.sql](https://database/scripts/triggers.sql) \- Security and auditing
+        
+4.  **Test the System:**
+    
+    *   [queries/phase6testscript.sql](https://queries/phase6testscript.sql) \- PL/SQL validation
+        
+    *   [queries/testscriptphase7.sql](https://queries/testscriptphase7.sql) \- Trigger testing
+        
+    *   [queries/audits.sql](https://queries/audits.sql) \- Audit verification
+        
 
--- Run creationphase5.sql to create tables and insert data
+### Default Credentials
 
--- Run Plsqlscripts.sql to create PL/SQL components
+*   **PDB**: `THUR_27413_Leslie_ExpiredGoodsDB`
+    
+*   **User**: `expiry_admin`
+    
+*   **Password**: `Leslie`
+    
+*   **Host**: `localhost:1521`
+    
 
--- Run phase7triggers.sql to implement triggers and auditing
+Links to Documentation
+----------------------
 
+### Business Intelligence
 
-#### 4. Testing & Validation
+*   **KPI Definitions**: [business\_intelligence/KPIdefinitions.md](https://business_intelligence/KPIdefinitions.md) \- Key Performance Indicators and metrics including Expiry Prevention Rate (85%), Alert Response Time (<4h), and Discount Effectiveness Ratio (≥75%)
+    
+*   **BI Requirements**: [business\_intelligence/birequirements.md](https://business_intelligence/birequirements.md) \- Stakeholder requirements, reporting frequencies, and decision support needs
+    
+*   **Dashboard Mockups**: [business\_intelligence/dashboard.md](https://business_intelligence/dashboard.md) \- Executive, Audit, and Performance dashboard designs with real-time metrics
+    
 
--- Run validation script.sql to verify data
+### Phase Documentation
 
--- Run phase6testscript.sql to test PL/SQL components
+*   **Phase IV - Database Configuration**: [database/documentation/databasconfig.md](https://database/documentation/databasconfig.md) \- PDB setup, privilege grants, tablespace configuration (100MB expiry\_data, 50MB expiry\_idx)
+    
+*   **Phase V - Table Implementation**: [database/documentation/tableimplementation.md](https://database/documentation/tableimplementation.md) \- Schema implementation with 7 tables, 27 indexes, and 1,250+ test records
+    
+*   **Phase VI - PL/SQL Development**: [database/documentation/plsqldevelopment.md](https://database/documentation/plsqldevelopment.md) \- 5 procedures, 5 functions, and 1 package with comprehensive error handling
+    
+*   **Phase VII - Triggers & Auditing**: [database/documentation/triggerauditing.md](https://database/documentation/triggerauditing.md) \- Security implementation with 5 triggers, holiday management, and audit logging
+    
 
--- Run testscript phase7.sql to verify triggers and auditing
+### System Documentation
 
+*   **System Architecture**: [documentation/architecture.md](https://documentation/architecture.md) \- Complete technical architecture including database design, PL/SQL components, and data flow diagrams
+    
+*   **Data Dictionary**: [documentation/datadictionary.md](https://documentation/datadictionary.md) \- Comprehensive table specifications with column definitions, constraints, and sample data for all 7 tables
+    
+*   **Design Decisions**: [documentation/designdecisions.md](https://documentation/designdecisions.md) \- Technical implementation choices, business rule justifications, and architectural decisions
+    
 
-## Default Credentials
-PDB Name: THUR_27413_Leslie_ExpiredGoodsDB
+### SQL Scripts
 
-Admin User: expiry_admin
+*   **Database Creation**: [database/scripts/createqueuries.sql](https://database/scripts/createqueuries.sql) \- Complete PDB setup, tablespace creation, and user configuration
+    
+*   **Data Insertion**: [database/scripts/insertqueuery.sql](https://database/scripts/insertqueuery.sql) \- Table creation with 1,250+ realistic test records across all business tables
+    
+*   **PL/SQL Components**: [database/scripts/Plsqlcomponents.sql](https://database/scripts/Plsqlcomponents.sql) \- Complete PL/SQL implementation with 5 procedures, 5 functions, 1 package, cursor examples, and window functions
+    
+*   **Triggers**: [database/scripts/triggers.sql](https://database/scripts/triggers.sql) \- Security triggers and audit system implementation with holiday management
+    
 
-Admin Password: Leslie
+### Testing Scripts
 
-Host: localhost
+*   **Phase VI Testing**: [queries/phase6testscript.sql](https://queries/phase6testscript.sql) \- Comprehensive PL/SQL component validation with unit testing for all procedures and functions
+    
+*   **Phase VII Testing**: [queries/testscriptphase7.sql](https://queries/testscriptphase7.sql) \- Security trigger validation and audit system testing with 6 test scenarios
+    
+*   **Audit Verification**: [queries/audits.sql](https://queries/audits.sql) \- Security audit system verification, trigger status checking, and compliance validation
+    
+*   **Analytical Queries**: [queries/analyticalqueries.sql](https://queries/analyticalqueries.sql) \- Business intelligence queries for reporting, analysis, and window function implementations
+    
+*   **Data Retrieval**: [queries/dataretrieval.sql](https://queries/dataretrieval.sql) \- Basic data retrieval, joins, aggregations, and subquery validation
+    
 
-Port: 1521
+### Screenshots
 
-## Database Schema
+#### Database Objects
 
-### Core Tables (7 Tables)
-PRODUCTS - Product inventory with expiry tracking
+*   **Tables & Indexes**: [screenshots/database\_objects/tables\_indexes.png](https://screenshots/database_objects/tables_indexes.png) \- Database table and index structure showing all 7 tables and 27 indexes
+    
+*   **Sequences**: [screenshots/database\_objects/sequences.png](https://screenshots/database_objects/sequences.png) \- Sequence implementations for auto-increment IDs across all tables
+    
+*   **Package**: [screenshots/database\_objects/package.png](https://screenshots/database_objects/package.png) \- PL/SQL package structure showing expiry\_management\_pkg specification and body
+    
+*   **Procedures, Functions, Triggers**: [screenshots/database\_objects/procedure\_function\_triggers.png](https://screenshots/database_objects/procedure_function_triggers.png) \- Complete PL/SQL component overview showing all 6 procedures, 11 functions, and 5 triggers
+    
 
-STAFF - System users and store employees
+#### Procedure Implementations
 
-ALERTS - Tiered expiration alerts
+*   **Generate Expiry Alert**: [screenshots/procedure\_triggers/generate\_expiry\_alert.png](https://screenshots/procedure_triggers/generate_expiry_alert.png) \- Alert generation procedure with tiered classification logic
+    
+*   **Assign Alert to Staff**: [screenshots/procedure\_triggers/assign\_alert\_to\_staff.png](https://screenshots/procedure_triggers/assign_alert_to_staff.png) \- Staff assignment procedure with role validation
+    
+*   **Process Product Sale**: [screenshots/procedure\_triggers/process\_product.png](https://screenshots/procedure_triggers/process_product.png) \- Sales processing procedure with automatic discount application
+    
+*   **Update Product Status**: [screenshots/procedure\_triggers/update\_product.png](https://screenshots/procedure_triggers/update_product.png) \- Batch status update procedure for EXPIRED/CRITICAL/NEAR\_EXPIRY classification
+    
+*   **Resolve Alert**: [screenshots/procedure\_triggers/resolve\_alert.png](https://screenshots/procedure_triggers/resolve_alert.png) \- Alert resolution procedure with audit logging
+    
+*   **Log Audit**: [screenshots/procedure\_triggers/log\_audit.png](https://screenshots/procedure_triggers/log_audit.png) \- Audit logging procedure with autonomous transaction handling
+    
+*   **Log Security**: [screenshots/procedure\_triggers/log\_security.png](https://screenshots/procedure_triggers/log_security.png) \- Security audit procedure with session tracking
+    
 
-ACTION_LOG - Comprehensive audit trail
+### Test Results
 
-SALES - Transaction processing with discounts
+*   **Phase VI Test Results**: [sample\_data/test\_results/test phase6.md](https://sample_data/test_results/test%2520phase6.md) \- PL/SQL component validation results showing all 16 components working correctly
+    
+*   **Phase VII Test Results**: [sample\_data/test\_results/tests phase7.md](https://sample_data/test_results/tests%2520phase7.md) \- Trigger system testing results with 4 out of 6 tests passed
+    
+*   **Audit Results**: [sample\_data/test\_results/audit result.md](https://sample_data/test_results/audit%2520result.md) \- Security audit verification showing 5 triggers active and 6 audit entries
+    
+*   **Alert Log Test**: [sample\_data/test\_results/alertlogtest.png](https://sample_data/test_results/alertlogtest.png) \- Alert system testing output with product category analysis
+    
+*   **Expiry Processing**: [sample\_data/test\_results/expiryproductprocessing.png](https://sample_data/test_results/expiryproductprocessing.png) \- Expiry processing test results showing 8 products expiring in 7 days
+    
 
-HOLIDAYS - Holiday management for trigger restrictions
+### Sample Data
 
-SECURITY_AUDIT_LOG - Security violation tracking
+*   **Sample Data README**: [sample\_data/README.md](https://sample_data/README.md) \- Overview of sample data files and test configurations
+    
+*   **ER Diagram**: [sample\_data/ER\_diagram.png](https://sample_data/ER_diagram.png) \- Entity Relationship diagram showing table relationships and foreign keys
+    
+
+System Specifications
+---------------------
+
+### Database Architecture
+
+*   **PDB**: THUR\_27413\_Leslie\_ExpiredGoodsDB
+    
+*   **Tablespaces**: expiry\_data (100MB), expiry\_idx (50MB), expiry\_temp (100MB)
+    
+*   **Sequences**: 12 sequences for auto-increment IDs
+    
+*   **Indexes**: 27 optimized indexes for performance
+    
+*   **Constraints**: 28 NOT NULL, 5 foreign keys, check constraints
+    
+
+### PL/SQL Components
+
+*   **Procedures**: 6 comprehensive procedures with error handling
+    
+*   **Functions**: 11 business functions for calculations and validations
+    
+*   **Package**: 1 complete package (expiry\_management\_pkg) with specification and body
+    
+*   **Triggers**: 5 security triggers with audit logging
+    
+*   **Cursors**: Explicit and REF CURSOR implementations
+    
+*   **Window Functions**: Advanced analytical queries for BI
+    
 
 ### Business Rules Implemented
-Tiered Alert System: MODERATE (4-7 days), CRITICAL (≤3 days)
 
-Progressive Discounting: 10%-50% based on remaining shelf life
-
-Automated Workflows: Daily expiry checks at 6:00 AM
-
-Security Restrictions: No DML on weekdays/holidays
-
-Audit Trail: Comprehensive action logging
-
-## PL/SQL Components
-
-### Procedures (5 Implemented)
-generate_expiry_alerts - Automated alert generation
-
-assign_alert_to_staff - Staff assignment with validation
-
-process_product_sale - Sales processing with discount application
-
-update_product_status_batch - Batch status updates
-
-resolve_alert - Alert resolution with audit logging
-
-### Functions (5 Implemented)
-calculate_days_until_expiry - Days remaining calculation
-
-get_recommended_discount - Optimal discount determination
-
-check_product_alert_status - Status classification
-
-calculate_total_discount_value - Financial impact analysis
-
-validate_staff_for_action - Permission validation
-
-### Package
-Package: expiry_management_pkg
-
-Components: 5 procedures, 5 functions, REF CURSOR implementation
-
-Features: Exception handling, business logic encapsulation
-
-### Triggers (Phase VII)
-4 Simple triggers for DML restriction on weekdays/holidays
-
-1 Compound trigger for staff table operations
-
-Comprehensive audit logging for all restricted attempts
-
-## Business Intelligence Capabilities
-
-### Analytical Queries
-Expiry Risk Analysis: Products categorized by expiry status
-
-Alert Effectiveness: Response rates by alert type
-
-Discount Impact Analysis: Revenue recovery from discounts
-
-Staff Performance Metrics: Actions taken and resolution rates
-
-Category Performance: Turnover rates by product category
-
-### Window Functions Implemented
-Product expiry ranking with ROW_NUMBER(), RANK(), DENSE_RANK()
-
-Staff performance analysis with LAG() and LEAD()
-
-Sales trend analysis with moving averages
-
-Cumulative revenue calculations
-
-
-## Testing & Validation
-The project includes comprehensive testing scripts:
-
-### Phase V: Data Validation
-
--- Basic data retrieval, joins, aggregations, subqueries
-
--- See validation script.sql
-
-
-### Phase VI: PL/SQL Testing
-
--- Unit testing for procedures, functions, packages
-
--- See phase6testscript.sql
-
-
-### Phase VII: Trigger Testing
-`
--- Comprehensive trigger validation with 6 test scenarios
-
--- See testscript phase7.sql
-
-
-## Phase Completion Status
-✅ Phase I: Problem Identification (Completed)
-
-✅ Phase II: Business Process Modeling (Completed)
-
-✅ Phase III: Logical Database Design (Completed)
-
-✅ Phase IV: Database Creation (Completed - Dec 5, 2025)
-
-✅ Phase V: Table Implementation & Data Insertion (Completed)
-
-✅ Phase VI: PL/SQL Development (Completed)
-
-✅ Phase VII: Advanced Programming & Auditing (Completed)
-
-🔄 Phase VIII: Final Documentation & Presentation (In Progress)
-
-## Key Features
-Automated Expiry Monitoring: Daily checks with tiered alerts
-
-Dynamic Discount Engine: Progressive discounts (10%-50%)
-
-Comprehensive Auditing: Security restrictions with audit logging
-
-Business Intelligence: Analytical queries and reporting
-
-Workflow Management: Staff assignment and action tracking
-
-Security Controls: DML restrictions on weekdays/holidays
-
-Performance Optimization: 27 indexes for query optimization
-
-Data Integrity: Full 3NF compliance with constraints
-
-## Documentation Links
-Phase Documentation  
-Phase IV: Database Configuration  
-Phase V: Table Implementation  
-Phase VI: PL/SQL Development  
-Phase V Technical Report  
-Project Technical Overview  
-
-Project Guidelines  
-Complete Project Requirements  
-Project Description & Schema  
-
-Script Files  
-Database Creation Script  
-Schema & Data Script  
-PL/SQL Components  
-Triggers & Auditing  
-
-Testing Scripts  
-Data Validation  
-PL/SQL Testing  
-Trigger Testing  
-Audit Verification  
-
-## Usage Examples
-
-### Generating Daily Alerts
-```sql
-BEGIN
-    expiry_management_pkg.generate_daily_alerts;
-END;
-/
-```
-
-### Processing a Sale with Discount
-```sql
-BEGIN
-    process_product_sale(
-        p_product_id => 1001,
-        p_quantity => 5,
-        p_staff_id => 101,
-        p_payment_method => 'CARD'
-    );
-END;
-/
-```
-
-### Checking Product Status
-```sql
-SELECT product_name, 
-       calculate_days_until_expiry(product_id) as days_remaining,
-       get_recommended_discount(product_id) as discount,
-       check_product_alert_status(product_id) as alert_status
-FROM products WHERE product_id = 1001;
-```
-
-## Performance Metrics
-Data Volume: 100+ products, 150+ staff, 200+ alerts, 300+ action logs
-
-Query Performance: BI queries execute in < 0.3 seconds
-
-Index Coverage: 27 indexes across 7 tables
-
-Constraint Validation: 100% constraint compliance
-
-## Support & Contact
-For technical issues or questions regarding this project:
-
-Student: Akariza Gasana Leslie  
-Email: [Your Email Address]  
-University: Adventist University of Central Africa (AUCA)  
-Course: Database Development with PL/SQL (INSY 8311)  
-Lecturer: Eric Maniraguha (eric.maniraguha@auca.ac.tw)
-
-## License & Acknowledgments
-This project was developed as part of the Database Development with PL/SQL course at AUCA. All code and documentation are original work created for academic purposes.
+1.  **Tiered Alert System:**
+    
+    *   CRITICAL: ≤2 days to expiry (automated discount application)
+        
+    *   MODERATE: 3-7 days to expiry (staff notification)
+        
+2.  **Progressive Discounting:**
+    
+    *   50%: 1 day remaining
+        
+    *   40%: 2 days remaining
+        
+    *   30%: 3 days remaining
+        
+    *   20%: 4-7 days remaining
+        
+    *   10%: 8-14 days remaining
+        
+3.  **Security Restrictions:**
+    
+    *   DML operations blocked on weekdays (Monday-Friday)
+        
+    *   DML operations blocked on configured holidays
+        
+    *   Comprehensive audit logging of all attempts
+        
+
+### Testing & Validation Status
+
+*   ✅ **Phase V**: Table implementation validated (1,250+ records)
+    
+*   ✅ **Phase VI**: PL/SQL components validated (all 16 components working)
+    
+*   ✅ **Phase VII**: Triggers and auditing validated (5 triggers active)
+    
+*   ✅ **Data Integrity**: All constraints and relationships validated
+    
+*   ✅ **Performance**: BI queries executing in <0.3 seconds
+    
+
+Support & Contact
+-----------------
+
+For technical support or questions regarding this system:
+
+**Student Developer:** Akariza Gasana Leslie  
+**Course:** Database Development with PL/SQL (INSY 8311)  
+**Institution:** Adventist University of Central Africa (AUCA)  
+**Academic Year:** 2024-2025
+
+_This project was developed as part of academic coursework and demonstrates comprehensive database development skills using Oracle PL/SQL._
