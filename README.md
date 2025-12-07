@@ -47,21 +47,21 @@ GRANT UNLIMITED TABLESPACE TO expiry\_admin;
 
 3.  **Execute Scripts in Order:**
     
-    *   [database/scripts/createqueuries.sql](https://database/scripts/createqueuries.sql) \- Database setup
+    *   [database/scripts/createqueuries.sql](hdatabase/scripts/createqueuries.sql) \- Database setup
         
-    *   [database/scripts/insertqueuery.sql](https://database/scripts/insertqueuery.sql) \- Tables and test data
+    *   [database/scripts/insertqueuery.sql](database/scripts/insertqueuery.sql) \- Tables and test data
         
-    *   [database/scripts/Plsqlcomponents.sql](https://database/scripts/Plsqlcomponents.sql) \- PL/SQL components
+    *   [database/scripts/Plsqlcomponents.sql](database/scripts/Plsqlcomponents.sql) \- PL/SQL components
         
-    *   [database/scripts/triggers.sql](https://database/scripts/triggers.sql) \- Security and auditing
+    *   [database/scripts/triggers.sql](database/scripts/triggers.sql) \- Security and auditing
         
 4.  **Test the System:**
     
-    *   [queries/phase6testscript.sql](https://queries/phase6testscript.sql) \- PL/SQL validation
+    *   [queries/phase6testscript.sql](queries/phase6testscript.sql) \- PL/SQL validation
         
-    *   [queries/testscriptphase7.sql](https://queries/testscriptphase7.sql) \- Trigger testing
+    *   [queries/testscriptphase7.sql](queries/testscriptphase7.sql) \- Trigger testing
         
-    *   [queries/audits.sql](https://queries/audits.sql) \- Audit verification
+    *   [queries/audits.sql](queries/audits.sql) \- Audit verification
         
 
 ### Default Credentials
@@ -80,105 +80,105 @@ Links to Documentation
 
 ### Business Intelligence
 
-*   **KPI Definitions**: [business\_intelligence/KPIdefinitions.md](https://business_intelligence/KPIdefinitions.md) \- Key Performance Indicators and metrics including Expiry Prevention Rate (85%), Alert Response Time (<4h), and Discount Effectiveness Ratio (≥75%)
+*   **KPI Definitions**: [business\_intelligence/KPIdefinitions.md](business_intelligence/KPIdefinitions.md) \- Key Performance Indicators and metrics including Expiry Prevention Rate (85%), Alert Response Time (<4h), and Discount Effectiveness Ratio (≥75%)
     
-*   **BI Requirements**: [business\_intelligence/birequirements.md](https://business_intelligence/birequirements.md) \- Stakeholder requirements, reporting frequencies, and decision support needs
+*   **BI Requirements**: [business\_intelligence/birequirements.md](business_intelligence/birequirements.md) \- Stakeholder requirements, reporting frequencies, and decision support needs
     
-*   **Dashboard Mockups**: [business\_intelligence/dashboard.md](https://business_intelligence/dashboard.md) \- Executive, Audit, and Performance dashboard designs with real-time metrics
+*   **Dashboard Mockups**: [business\_intelligence/dashboard.md](business_intelligence/dashboard.md) \- Executive, Audit, and Performance dashboard designs with real-time metrics
     
 
 ### Phase Documentation
 
-*   **Phase IV - Database Configuration**: [database/documentation/databasconfig.md](https://database/documentation/databasconfig.md) \- PDB setup, privilege grants, tablespace configuration (100MB expiry\_data, 50MB expiry\_idx)
+*   **Phase IV - Database Configuration**: [database/documentation/databasconfig.md](database/documentation/databasconfig.md) \- PDB setup, privilege grants, tablespace configuration (100MB expiry\_data, 50MB expiry\_idx)
     
-*   **Phase V - Table Implementation**: [database/documentation/tableimplementation.md](https://database/documentation/tableimplementation.md) \- Schema implementation with 7 tables, 27 indexes, and 1,250+ test records
+*   **Phase V - Table Implementation**: [database/documentation/tableimplementation.md](database/documentation/tableimplementation.md) \- Schema implementation with 7 tables, 27 indexes, and 1,250+ test records
     
-*   **Phase VI - PL/SQL Development**: [database/documentation/plsqldevelopment.md](https://database/documentation/plsqldevelopment.md) \- 5 procedures, 5 functions, and 1 package with comprehensive error handling
+*   **Phase VI - PL/SQL Development**: [database/documentation/plsqldevelopment.md](hdatabase/documentation/plsqldevelopment.md) \- 5 procedures, 5 functions, and 1 package with comprehensive error handling
     
-*   **Phase VII - Triggers & Auditing**: [database/documentation/triggerauditing.md](https://database/documentation/triggerauditing.md) \- Security implementation with 5 triggers, holiday management, and audit logging
+*   **Phase VII - Triggers & Auditing**: [database/documentation/triggerauditing.md](database/documentation/triggerauditing.md) \- Security implementation with 5 triggers, holiday management, and audit logging
     
 
 ### System Documentation
 
-*   **System Architecture**: [documentation/architecture.md](https://documentation/architecture.md) \- Complete technical architecture including database design, PL/SQL components, and data flow diagrams
+*   **System Architecture**: [documentation/architecture.md](documentation/architecture.md) \- Complete technical architecture including database design, PL/SQL components, and data flow diagrams
     
-*   **Data Dictionary**: [documentation/datadictionary.md](https://documentation/datadictionary.md) \- Comprehensive table specifications with column definitions, constraints, and sample data for all 7 tables
+*   **Data Dictionary**: [documentation/datadictionary.md](documentation/datadictionary.md) \- Comprehensive table specifications with column definitions, constraints, and sample data for all 7 tables
     
-*   **Design Decisions**: [documentation/designdecisions.md](https://documentation/designdecisions.md) \- Technical implementation choices, business rule justifications, and architectural decisions
+*   **Design Decisions**: [documentation/designdecisions.md](documentation/designdecisions.md) \- Technical implementation choices, business rule justifications, and architectural decisions
     
 
 ### SQL Scripts
 
-*   **Database Creation**: [database/scripts/createqueuries.sql](https://database/scripts/createqueuries.sql) \- Complete PDB setup, tablespace creation, and user configuration
+*   **Database Creation**: [database/scripts/createqueuries.sql](database/scripts/createqueuries.sql) \- Complete PDB setup, tablespace creation, and user configuration
     
-*   **Data Insertion**: [database/scripts/insertqueuery.sql](https://database/scripts/insertqueuery.sql) \- Table creation with 1,250+ realistic test records across all business tables
+*   **Data Insertion**: [database/scripts/insertqueuery.sql](database/scripts/insertqueuery.sql) \- Table creation with 1,250+ realistic test records across all business tables
     
-*   **PL/SQL Components**: [database/scripts/Plsqlcomponents.sql](https://database/scripts/Plsqlcomponents.sql) \- Complete PL/SQL implementation with 5 procedures, 5 functions, 1 package, cursor examples, and window functions
+*   **PL/SQL Components**: [database/scripts/Plsqlcomponents.sql](database/scripts/Plsqlcomponents.sql) \- Complete PL/SQL implementation with 5 procedures, 5 functions, 1 package, cursor examples, and window functions
     
-*   **Triggers**: [database/scripts/triggers.sql](https://database/scripts/triggers.sql) \- Security triggers and audit system implementation with holiday management
+*   **Triggers**: [database/scripts/triggers.sql](database/scripts/triggers.sql) \- Security triggers and audit system implementation with holiday management
     
 
 ### Testing Scripts
 
-*   **Phase VI Testing**: [queries/phase6testscript.sql](https://queries/phase6testscript.sql) \- Comprehensive PL/SQL component validation with unit testing for all procedures and functions
+*   **Phase VI Testing**: [queries/phase6testscript.sql](queries/phase6testscript.sql) \- Comprehensive PL/SQL component validation with unit testing for all procedures and functions
     
-*   **Phase VII Testing**: [queries/testscriptphase7.sql](https://queries/testscriptphase7.sql) \- Security trigger validation and audit system testing with 6 test scenarios
+*   **Phase VII Testing**: [queries/testscriptphase7.sql](queries/testscriptphase7.sql) \- Security trigger validation and audit system testing with 6 test scenarios
     
-*   **Audit Verification**: [queries/audits.sql](https://queries/audits.sql) \- Security audit system verification, trigger status checking, and compliance validation
+*   **Audit Verification**: [queries/audits.sql](queries/audits.sql) \- Security audit system verification, trigger status checking, and compliance validation
     
-*   **Analytical Queries**: [queries/analyticalqueries.sql](https://queries/analyticalqueries.sql) \- Business intelligence queries for reporting, analysis, and window function implementations
+*   **Analytical Queries**: [queries/analyticalqueries.sql](queries/analyticalqueries.sql) \- Business intelligence queries for reporting, analysis, and window function implementations
     
-*   **Data Retrieval**: [queries/dataretrieval.sql](https://queries/dataretrieval.sql) \- Basic data retrieval, joins, aggregations, and subquery validation
+*   **Data Retrieval**: [queries/dataretrieval.sql](queries/dataretrieval.sql) \- Basic data retrieval, joins, aggregations, and subquery validation
     
 
 ### Screenshots
 
 #### Database Objects
 
-*   **Tables & Indexes**: [screenshots/database\_objects/tables\_indexes.png](https://screenshots/database_objects/tables_indexes.png) \- Database table and index structure showing all 7 tables and 27 indexes
+*   **Tables & Indexes**: [screenshots/database\_objects/tables\_indexes.png](screenshots/database_objects/tables_indexes.png) \- Database table and index structure showing all 7 tables and 27 indexes
     
-*   **Sequences**: [screenshots/database\_objects/sequences.png](https://screenshots/database_objects/sequences.png) \- Sequence implementations for auto-increment IDs across all tables
+*   **Sequences**: [screenshots/database\_objects/sequences.png](screenshots/database_objects/sequences.png) \- Sequence implementations for auto-increment IDs across all tables
     
-*   **Package**: [screenshots/database\_objects/package.png](https://screenshots/database_objects/package.png) \- PL/SQL package structure showing expiry\_management\_pkg specification and body
+*   **Package**: [screenshots/database\_objects/package.png](screenshots/database_objects/package.png) \- PL/SQL package structure showing expiry\_management\_pkg specification and body
     
-*   **Procedures, Functions, Triggers**: [screenshots/database\_objects/procedure\_function\_triggers.png](https://screenshots/database_objects/procedure_function_triggers.png) \- Complete PL/SQL component overview showing all 6 procedures, 11 functions, and 5 triggers
+*   **Procedures, Functions, Triggers**: [screenshots/database\_objects/procedure\_function\_triggers.png](screenshots/database_objects/procedure_function_triggers.png) \- Complete PL/SQL component overview showing all 6 procedures, 11 functions, and 5 triggers
     
 
 #### Procedure Implementations
 
-*   **Generate Expiry Alert**: [screenshots/procedure\_triggers/generate\_expiry\_alert.png](https://screenshots/procedure_triggers/generate_expiry_alert.png) \- Alert generation procedure with tiered classification logic
+*   **Generate Expiry Alert**: [screenshots/procedure\_triggers/generate\_expiry\_alert.png](screenshots/procedure_triggers/generate_expiry_alert.png) \- Alert generation procedure with tiered classification logic
     
-*   **Assign Alert to Staff**: [screenshots/procedure\_triggers/assign\_alert\_to\_staff.png](https://screenshots/procedure_triggers/assign_alert_to_staff.png) \- Staff assignment procedure with role validation
+*   **Assign Alert to Staff**: [screenshots/procedure\_triggers/assign\_alert\_to\_staff.png](screenshots/procedure_triggers/assign_alert_to_staff.png) \- Staff assignment procedure with role validation
     
-*   **Process Product Sale**: [screenshots/procedure\_triggers/process\_product.png](https://screenshots/procedure_triggers/process_product.png) \- Sales processing procedure with automatic discount application
+*   **Process Product Sale**: [screenshots/procedure\_triggers/process\_product.png](screenshots/procedure_triggers/process_product.png) \- Sales processing procedure with automatic discount application
     
-*   **Update Product Status**: [screenshots/procedure\_triggers/update\_product.png](https://screenshots/procedure_triggers/update_product.png) \- Batch status update procedure for EXPIRED/CRITICAL/NEAR\_EXPIRY classification
+*   **Update Product Status**: [screenshots/procedure\_triggers/update\_product.png](screenshots/procedure_triggers/update_product.png) \- Batch status update procedure for EXPIRED/CRITICAL/NEAR\_EXPIRY classification
     
-*   **Resolve Alert**: [screenshots/procedure\_triggers/resolve\_alert.png](https://screenshots/procedure_triggers/resolve_alert.png) \- Alert resolution procedure with audit logging
+*   **Resolve Alert**: [screenshots/procedure\_triggers/resolve\_alert.png](screenshots/procedure_triggers/resolve_alert.png) \- Alert resolution procedure with audit logging
     
-*   **Log Audit**: [screenshots/procedure\_triggers/log\_audit.png](https://screenshots/procedure_triggers/log_audit.png) \- Audit logging procedure with autonomous transaction handling
+*   **Log Audit**: [screenshots/procedure\_triggers/log\_audit.png](screenshots/procedure_triggers/log_audit.png) \- Audit logging procedure with autonomous transaction handling
     
-*   **Log Security**: [screenshots/procedure\_triggers/log\_security.png](https://screenshots/procedure_triggers/log_security.png) \- Security audit procedure with session tracking
+*   **Log Security**: [screenshots/procedure\_triggers/log\_security.png](screenshots/procedure_triggers/log_security.png) \- Security audit procedure with session tracking
     
 
 ### Test Results
 
-*   **Phase VI Test Results**: [sample\_data/test\_results/test phase6.md](https://sample_data/test_results/test%2520phase6.md) \- PL/SQL component validation results showing all 16 components working correctly
+*   **Phase VI Test Results**: [sample\_data/test\_results/test phase6.md](screenshots/sample_data/test_results/test%2520phase6.md) \- PL/SQL component validation results showing all 16 components working correctly
     
-*   **Phase VII Test Results**: [sample\_data/test\_results/tests phase7.md](https://sample_data/test_results/tests%2520phase7.md) \- Trigger system testing results with 4 out of 6 tests passed
+*   **Phase VII Test Results**: [sample\_data/test\_results/tests phase7.md](screenshots/sample_data/test_results/tests%2520phase7.md) \- Trigger system testing results with 4 out of 6 tests passed
     
-*   **Audit Results**: [sample\_data/test\_results/audit result.md](https://sample_data/test_results/audit%2520result.md) \- Security audit verification showing 5 triggers active and 6 audit entries
+*   **Audit Results**: [sample\_data/test\_results/audit result.md](screenshots/sample_data/test_results/audit%2520result.md) \- Security audit verification showing 5 triggers active and 6 audit entries
     
-*   **Alert Log Test**: [sample\_data/test\_results/alertlogtest.png](https://sample_data/test_results/alertlogtest.png) \- Alert system testing output with product category analysis
+*   **Alert Log Test**: [sample\_data/test\_results/alertlogtest.png](screenshots/sample_data/test_results/alertlogtest.png) \- Alert system testing output with product category analysis
     
-*   **Expiry Processing**: [sample\_data/test\_results/expiryproductprocessing.png](https://sample_data/test_results/expiryproductprocessing.png) \- Expiry processing test results showing 8 products expiring in 7 days
+*   **Expiry Processing**: [sample\_data/test\_results/expiryproductprocessing.png](screenshots/sample_data/test_results/expiryproductprocessing.png) \- Expiry processing test results showing 8 products expiring in 7 days
     
 
 ### Sample Data
 
-*   **Sample Data README**: [sample\_data/README.md](https://sample_data/README.md) \- Overview of sample data files and test configurations
+*   **Sample Data README**: [sample\_data/README.md](screenshots/sample_data/README.md) \- Overview of sample data files and test configurations
     
-*   **ER Diagram**: [sample\_data/ER\_diagram.png](https://sample_data/ER_diagram.png) \- Entity Relationship diagram showing table relationships and foreign keys
+*   **ER Diagram**: [sample\_data/ER\_diagram.png](screenshots/ER_diagram.png) \- Entity Relationship diagram showing table relationships and foreign keys
     
 
 System Specifications
