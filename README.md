@@ -175,35 +175,6 @@ Sales trend analysis with moving averages
 
 Cumulative revenue calculations
 
-## Project Structure
-```
-expired-goods-system/
-├── database/
-│   ├── scripts/
-│   │   ├── creationphase5.sql          # Table creation & data insertion
-│   │   ├── Plsqlscripts.sql            # PL/SQL components (Phase VI)
-│   │   ├── phase7triggers.sql          # Triggers & auditing (Phase VII)
-│   │   └── creatioscript.sql           # Initial PDB creation
-│   └── documentation/
-│       ├── phase4 readme.md            # Phase IV documentation
-│       ├── Vreadme.md                  # Phase V documentation
-│       ├── Phase6readme.md             # Phase VI documentation
-│       ├── phase 5 report.txt          # Phase V technical report
-│       └── overview.md                 # Technical overview
-├── queries/
-│   ├── validation script.sql           # Data validation queries
-│   ├── phase6testscript.sql            # PL/SQL testing
-│   ├── testscript phase7.sql           # Trigger testing
-│   └── phase7audits.sql                # Audit verification
-├── business_intelligence/
-│   ├── bi_queries.sql                  # Analytical queries
-│   └── kpi_definitions.md              # Key performance indicators
-├── screenshots/
-│   ├── er_diagram.png                  # Entity-Relationship diagram
-│   ├── database_structure/             # SQL Developer screenshots
-│   └── test_results/                   # Execution results
-└── README.md                           # This file
-```
 
 ## Testing & Validation
 The project includes comprehensive testing scripts:
